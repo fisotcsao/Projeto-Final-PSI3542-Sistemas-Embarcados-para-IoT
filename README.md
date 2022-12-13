@@ -6,7 +6,7 @@ Aqui colocaremos os arquivos e os tutoriais do nosso projeto.
 Suas características principais podem ser encontradas em: http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-PC.html
 
 ## Dispositivo Embarcado IoT
-ESP8266
+ESP32
 
 ## Sensores
 Sensor DHT-11 para medição de temperatura e de humidade.
