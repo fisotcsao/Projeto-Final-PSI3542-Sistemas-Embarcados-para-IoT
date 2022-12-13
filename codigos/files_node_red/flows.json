@@ -1,0 +1,726 @@
+[
+    {
+        "id": "fcc7f5ae92e7034c",
+        "type": "tab",
+        "label": "Projeto Final",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "58209ccb048e3ee6",
+        "type": "exec",
+        "z": "fcc7f5ae92e7034c",
+        "command": "fswebcam -r 320x240 --device /dev/video2 /home/orangepi/Pictures/verifica.jpg",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "9bebfcdc13151b2c",
+                "a1a17e69a85137a2"
+            ],
+            [
+                "559326e311977aec"
+            ],
+            [
+                "05f6902ab8b66a1d"
+            ]
+        ]
+    },
+    {
+        "id": "be9cd32fd3731f39",
+        "type": "inject",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "58209ccb048e3ee6"
+            ]
+        ]
+    },
+    {
+        "id": "9bebfcdc13151b2c",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 37",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "559326e311977aec",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 38",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "05f6902ab8b66a1d",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 39",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1050,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a1a17e69a85137a2",
+        "type": "file in",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "filename": "/home/orangepi/Pictures/verifica.jpg",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 780,
+        "y": 280,
+        "wires": [
+            [
+                "209c80f83d21f399",
+                "af713705f9461f01"
+            ]
+        ]
+    },
+    {
+        "id": "af713705f9461f01",
+        "type": "facial-recognition",
+        "z": "fcc7f5ae92e7034c",
+        "image": "payload",
+        "settings": "settings",
+        "name": "",
+        "bindings": "CPU",
+        "FaceDetector": "SsdMobilenetv1",
+        "FaceDetector_SsdMobilenetv1_maxResults": 3,
+        "FaceDetector_SsdMobilenetv1_minConfidence": "0.6",
+        "FaceDetector_tinyFaceDetector_inputSize": "416",
+        "FaceDetector_tinyFaceDetector_scoreThreshold": ".4",
+        "Tasks": "detectSingleFace",
+        "FaceLandmarks": true,
+        "FaceExpressions": false,
+        "AgeAndGender": false,
+        "FaceDescriptors": true,
+        "Face_Recognition": "Face_Recognition_enabled",
+        "Face_Recognition_enabled_path": "FullPathToLabeledFaces",
+        "Face_Recognition_distanceThreshold": 0.7,
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "31ba71a7846b8f80",
+                "b8c0783af38299bf"
+            ]
+        ]
+    },
+    {
+        "id": "31ba71a7846b8f80",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "Resultados",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 330,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "209c80f83d21f399",
+        "type": "image",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "width": 160,
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": false,
+        "outputs": 0,
+        "x": 1100,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5da3c86a99e33d58",
+        "type": "sox-play",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "outputDevice": "2,0",
+        "manualOutput": "",
+        "gain": "0",
+        "startNew": "skip",
+        "playStream": false,
+        "inputEncoding": "signed-integer",
+        "inputChannels": 1,
+        "inputRate": 16000,
+        "inputBits": 16,
+        "debugOutput": false,
+        "x": 2320,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bbab858324a9c216",
+        "type": "watson-text-to-speech",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaV3Voice",
+        "voicehidden": "",
+        "format": "audio/mpeg",
+        "password": "",
+        "apikey": "Di1LyQ_cmAJXzmE056NWH9kZLjhtoHxaudu_jFQTwn54",
+        "payload-response": false,
+        "service-endpoint": "https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/3c393239-daf4-4fb0-92ea-51e1f6e0ca9c",
+        "x": 2120,
+        "y": 500,
+        "wires": [
+            [
+                "5da3c86a99e33d58"
+            ]
+        ]
+    },
+    {
+        "id": "187a6763e76774ae",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 44",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2110,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "c90ba8c3a1f5f281",
+        "type": "sox-record",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "buttonStart": "msg",
+        "inputs": 1,
+        "inputSource": "default",
+        "manualSource": "",
+        "inputEncoding": "signed-integer",
+        "inputChannels": 1,
+        "inputRate": 16000,
+        "inputBits": 16,
+        "byteOrder": "-L",
+        "encoding": "signed-integer",
+        "channels": 1,
+        "rate": 16000,
+        "bits": 16,
+        "gain": "0",
+        "buffer": "4096",
+        "showDuration": false,
+        "durationType": "forever",
+        "durationLength": "0",
+        "silenceDetection": "nothing",
+        "silenceDuration": "2.0",
+        "silenceThreshold": "2.0",
+        "outputFormat": "stream",
+        "manualPath": "",
+        "debugOutput": false,
+        "x": 830,
+        "y": 460,
+        "wires": [
+            [
+                "67f9a789a86e374f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a7588895ed659ed3",
+        "type": "rpi-dht22",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "topic": "rpi-dht22",
+        "dht": "22",
+        "pintype": "0",
+        "pin": "20",
+        "x": 1910,
+        "y": 460,
+        "wires": [
+            [
+                "bbab858324a9c216",
+                "187a6763e76774ae"
+            ]
+        ]
+    },
+    {
+        "id": "67f9a789a86e374f",
+        "type": "watson-speech-to-text",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "alternatives": 1,
+        "speakerlabels": true,
+        "smartformatting": false,
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "0.5",
+        "band": "BroadbandModel",
+        "bandhidden": "",
+        "keywords": "poli",
+        "keywords-threshold": "0.5",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "DsJh44HDcXDKdOlOxqoNcwlxSARnw47fUpFavVH8ERsj",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": true,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "service-endpoint": "https://api.au-syd.speech-to-text.watson.cloud.ibm.com/instances/b81ac9ee-4a99-4116-aba3-5ed0465ea065",
+        "x": 1120,
+        "y": 460,
+        "wires": [
+            [
+                "1380be9df72e1f6e",
+                "b3bdfddb9571e212"
+            ]
+        ]
+    },
+    {
+        "id": "528ad7512cd1612d",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 45",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "06b71589f5b5ca24",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 46",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1910,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "29d37d1c6223baf4",
+        "type": "sox-play",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "outputDevice": "2,0",
+        "manualOutput": "",
+        "gain": "0",
+        "startNew": "skip",
+        "playStream": false,
+        "inputEncoding": "signed-integer",
+        "inputChannels": 1,
+        "inputRate": 16000,
+        "inputBits": 16,
+        "debugOutput": false,
+        "x": 2340,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54bcc86eedb0db6a",
+        "type": "watson-text-to-speech",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "lang": "pt-BR",
+        "langhidden": "pt-BR",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "voice": "pt-BR_IsabelaV3Voice",
+        "voicehidden": "",
+        "format": "audio/mpeg",
+        "password": "",
+        "apikey": "Di1LyQ_cmAJXzmE056NWH9kZLjhtoHxaudu_jFQTwn54",
+        "payload-response": false,
+        "service-endpoint": "https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/3c393239-daf4-4fb0-92ea-51e1f6e0ca9c",
+        "x": 2120,
+        "y": 780,
+        "wires": [
+            [
+                "29d37d1c6223baf4"
+            ]
+        ]
+    },
+    {
+        "id": "64997794f0eff078",
+        "type": "rpi-dht22",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "topic": "rpi-dht22",
+        "dht": "22",
+        "pintype": "2",
+        "pin": "37",
+        "x": 1910,
+        "y": 740,
+        "wires": [
+            [
+                "54bcc86eedb0db6a",
+                "e78d5077cdacdeb2"
+            ]
+        ]
+    },
+    {
+        "id": "1380be9df72e1f6e",
+        "type": "function",
+        "z": "fcc7f5ae92e7034c",
+        "name": "detecta_hum",
+        "func": "let text = msg.payload;\nlet result = text.includes(\"umidade\");\nif (result) {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 740,
+        "wires": [
+            [
+                "06b71589f5b5ca24",
+                "64997794f0eff078"
+            ]
+        ]
+    },
+    {
+        "id": "b3bdfddb9571e212",
+        "type": "function",
+        "z": "fcc7f5ae92e7034c",
+        "name": "detecta_temp",
+        "func": "let text = msg.payload;\nlet result = text.includes(\"temperatura\");\nif(result){\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1640,
+        "y": 460,
+        "wires": [
+            [
+                "528ad7512cd1612d",
+                "a7588895ed659ed3"
+            ]
+        ]
+    },
+    {
+        "id": "c35208dd229a9b94",
+        "type": "inject",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1650,
+        "y": 820,
+        "wires": [
+            [
+                "64997794f0eff078"
+            ]
+        ]
+    },
+    {
+        "id": "a93118a8221749ed",
+        "type": "inject",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 1650,
+        "y": 560,
+        "wires": [
+            [
+                "a7588895ed659ed3"
+            ]
+        ]
+    },
+    {
+        "id": "e78d5077cdacdeb2",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 48",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "humidity",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 2110,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "b8c0783af38299bf",
+        "type": "function",
+        "z": "fcc7f5ae92e7034c",
+        "name": "recognizeAndStart",
+        "func": "//let text = msg.payload; \n//let teste = JSON.parse(msg.payload);\nlet teste = JSON.stringify(msg.payload);\n//RED.util.getObjectProperty(msg.payload, \"_className\");\nlet result = teste.includes(\"Caio\");\nif(result){\n    msg.payload = \"autorizado\";\n    return msg;\n}\n//msg.payload = teste;\n//return msg\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "c90ba8c3a1f5f281",
+                "f4d079e505a01342",
+                "196bbfb7ddbc56e7"
+            ]
+        ]
+    },
+    {
+        "id": "f4d079e505a01342",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "startou",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 640,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "79688c2c39feab30",
+        "type": "mqtt in",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "topic": "gabriel/altera-temp-up",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f1e9b7bcb1cdce1b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 270,
+        "y": 780,
+        "wires": [
+            [
+                "9b6749e603502261"
+            ]
+        ]
+    },
+    {
+        "id": "9b6749e603502261",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 49",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 490,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "f75584025f439269",
+        "type": "mqtt in",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "topic": "gabriel/altera-temp-down",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f1e9b7bcb1cdce1b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 860,
+        "wires": [
+            [
+                "44a7150d6ff0a6f8"
+            ]
+        ]
+    },
+    {
+        "id": "44a7150d6ff0a6f8",
+        "type": "debug",
+        "z": "fcc7f5ae92e7034c",
+        "name": "debug 50",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 510,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "196bbfb7ddbc56e7",
+        "type": "mqtt out",
+        "z": "fcc7f5ae92e7034c",
+        "name": "",
+        "topic": "gabriel/altera-start-recon",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f1e9b7bcb1cdce1b",
+        "x": 860,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "f1e9b7bcb1cdce1b",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
