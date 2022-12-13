@@ -14,8 +14,6 @@ Sensor DHT-11 para medição de temperatura e de humidade.
 ## Nuvem
 IBM Cloud
 
-## Floorplan da solução 
-
 ## Aplicativo para smatphone Android
 Diagrama de Blocos - Parte 1
 ![img1](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/diagrama_blocos_app_inventor_parte_1.png?raw=true "Diagrama de Blocos - Parte 1")
@@ -32,4 +30,3 @@ Diagrama de Blocos - Parte 4
 ## Link para o tutorial no YouTube
 
 
-![alt text](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/componentes_horizontal_arrangement9.png)
