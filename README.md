@@ -17,5 +17,5 @@ IBM Cloud
 ## Floorplan da solução 
 
 ## Aplicativo para smatphone Android
-
+![alt text](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/componentes_horizontal_arrangement9.png)
 ## Link para o tutorial no YouTube
