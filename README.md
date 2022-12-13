@@ -17,5 +17,19 @@ IBM Cloud
 ## Floorplan da solução 
 
 ## Aplicativo para smatphone Android
-![alt text](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/componentes_horizontal_arrangement9.png)
+Diagrama de Blocos - Parte 1
+![img1](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/diagrama_blocos_app_inventor_parte_1.png?raw=true "Diagrama de Blocos - Parte 1")
+
+Diagrama de Blocos - Parte 2
+![img2](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/diagrama_blocos_app_inventor_parte_2.png?raw=true "Diagrama de Blocos - Parte 2")
+
+Diagrama de Blocos - Parte 3
+![img3](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/diagrama_blocos_app_inventor_parte_3.png?raw=true "Diagrama de Blocos - Parte 3")
+
+Diagrama de Blocos - Parte 4
+![img4](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/diagrama_blocos_app_inventor_parte_4.png?raw=true "Diagrama de Blocos - Parte 4")
+
 ## Link para o tutorial no YouTube
+
+
+![alt text](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/componentes_horizontal_arrangement9.png)
