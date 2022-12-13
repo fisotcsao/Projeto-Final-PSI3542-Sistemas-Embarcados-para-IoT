@@ -49,3 +49,4 @@ Diagrama de Blocos - Parte 4
 ![img4](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/APLICATIVO/diagrama_blocos_app_inventor_parte_4.png?raw=true "Diagrama de Blocos - Parte 4")
 
 ## Link para o tutorial no YouTube
+https://youtu.be/dupm4lE2VqY
