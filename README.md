@@ -9,7 +9,7 @@ Suas características principais podem ser encontradas em: http://www.orangepi.o
 ESP32
 
 ## Sensores
-Sensor DHT-11 para medição de temperatura e de humidade.
+Sensor DHT-22 para medição de temperatura e de humidade.
 
 ## Nuvem
 IBM Cloud
