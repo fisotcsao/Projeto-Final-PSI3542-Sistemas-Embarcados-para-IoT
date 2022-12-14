@@ -32,8 +32,10 @@ Sensor DHT-22 para medição de temperatura e de humidade.
 IBM Cloud
 
 ## Floorplan
-Para o projeto, o Floorplan será de uma residência baseada na moradia de um dos integrantes do grupo. A residência se trata de um apartamento de mais ou menos 42 m2compacto e dividido em espaços menores identificados na Figura 1. 
+Para o projeto, o Floorplan será de uma residência baseada na moradia de um dos integrantes do grupo. A residência se trata de um apartamento de mais ou menos 42 m2 compacto e dividido em espaços menores identificados na figura abaixo. 
 A princípio, o dispositivo embarcado IoT e o dispositivo IoT estarão localizados na sala que serve tanto como uma sala de estar e também como sala de jantar. Tal escolha se deve  ao fato de tal local ser utilizado por todos os membros da residência e também por ser o mais utilizado por cada membro, assim, uma aclimatação nesse local é a que se mostra a mais vantajosa. 
+
+![img1](https://github.com/fisotcsao/Projeto-Final-PSI3542-Sistemas-Embarcados-para-IoT/blob/main/IMAGENS/Floorplan.png?raw=true "Floorplan")
 
 
 ## Aplicativo para smatphone Android
